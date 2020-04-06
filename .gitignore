@@ -1,0 +1,17 @@
+/.dropbox
+/CivilVR.csproj
+/CivilVR.Editor.csproj
+/CivilVR.sln
+/Assembly-CSharp.csproj
+/Assembly-CSharp-Editor.csproj
+/Assembly-CSharp-firstpass.csproj
+/Library
+/.vs
+/Temp
+/obj
+/Logs
+
+*sln
+*csproj
+*.meta~HEAD
+ProjectSettings/ProjectVersion.txt
