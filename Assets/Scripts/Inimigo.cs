@@ -6,8 +6,7 @@ public class Inimigo : MonoBehaviour
 {
     public Transform player;
     public float velocidade = 0.05f;
-
-
+    public CharacterController controller;
     // Update is called once per frame
     void Update()
     {
@@ -16,7 +15,8 @@ public class Inimigo : MonoBehaviour
         direcaoInimigoParaJogador = direcaoInimigoParaJogador.normalized;
         direcaoInimigoParaJogador = direcaoInimigoParaJogador * velocidade;
         direcaoInimigoParaJogador.z = 0;
-        transform.Translate(direcaoInimigoParaJogador);
+        //transform.Translate(direcaoInimigoParaJogador);
+        controller.Move(direcaoInimigoParaJogador);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,6 +24,10 @@ public class Inimigo : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "Enemy")
+        {
+            //Fazer algo quando um inimigo colide com outro inimigo
         }
     }
 }
