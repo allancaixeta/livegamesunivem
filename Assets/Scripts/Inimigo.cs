@@ -17,17 +17,5 @@ public class Inimigo : MonoBehaviour
         direcaoInimigoParaJogador.z = 0;
         //transform.Translate(direcaoInimigoParaJogador);
         controller.Move(direcaoInimigoParaJogador);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Player")
-        {
-            Destroy(other.gameObject);
-        }
-        if (other.gameObject.tag == "Enemy")
-        {
-            //Fazer algo quando um inimigo colide com outro inimigo
-        }
-    }
+    }    
 }
