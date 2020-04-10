@@ -9,6 +9,7 @@ public class Projetil : MonoBehaviour
     public float velocidade = 0.5f;
     public int capacidadePerfurativa = 1;
     public int capacidadeReflexiva = 3;
+    public int damage = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,10 @@ public class Projetil : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Destroy(other.gameObject);
+            bool morreuOuNao = other.GetComponent<Inimigo>().DecreaseLife(damage);
+            if (morreuOuNao == true)
+                Destroy(other.gameObject);
+
             capacidadePerfurativa = capacidadePerfurativa - 1;//capacidadePerfurativa--;
             if (capacidadePerfurativa < 0)
                 Destroy(this.gameObject);
