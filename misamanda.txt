@@ -1,3 +1,2 @@
-
-
-escrevendo coisas diferentes
+print(hello there! :D)
+var a;
